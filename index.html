@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliana Braga Lima - Fisioterapeuta Dermatofuncional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Manrope:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f3ef;
+            color: #5a2828;
+            line-height: 1.6;
+            max-width: 430px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            position: relative;
+        }
+        
+        .background-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Seção de cards */
+        .welcome-section {
+            position: absolute;
+            top: 49%;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        /* Estilos para a seção de cards */
+        .content-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 85%;
+            height: 200px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            cursor: pointer;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border: 1px solid #546c86;
+        }
+        
+        .card-1 { background-image: url('https://i.imgur.com/SyC8kyc.jpeg'); }
+        .card-2 { background-image: url('https://i.imgur.com/DJv6WTU.jpeg'); }
+        .card-3 { background-image: url('https://i.imgur.com/yS4goq6.jpeg'); }
+        .card-4 { background-image: url('https://i.imgur.com/p1r68uU.jpeg'); }
+        
+        
+        .card:hover {
+            transform: translateY(-3px);
+            transition: transform 0.3s ease;
+        }
+        
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Texto de copyright */
+        .copyright-container {
+            position: absolute;
+            bottom: 1%; /* Mantendo o texto na mesma posição */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .copyright {
+            font-size: 0.7rem;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .copyright a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 480px) {
+            .welcome-section {
+                top: 47%;
+            }
+            
+            .card {
+                height: 180px;
+                max-width: 90%;
+            }
+            
+            .content-cards {
+                gap: 1.4rem;
+            }
+            
+            .copyright-container {
+                bottom: 0.5%; /* Mantendo o texto na mesma posição para mobile */
+            }
+            
+            .copyright {
+                font-size: 0.65rem;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .welcome-section {
+                top: 45%;
+            }
+            
+            .card {
+                height: 160px;
+                max-width: 95%;
+            }
+            
+            .content-cards {
+                gap: 1.2rem;
+            }
+            
+            .copyright-container {
+                bottom: 0.2%; /* Mantendo o texto na mesma posição para telas pequenas */
+            }
+            
+            .copyright {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Nova imagem de fundo -->
+        <img src="https://i.imgur.com/LACbMUH.jpeg" alt="Juliana Braga Lima" class="background-image">
+        
+        <!-- Seção de cards -->
+        <div class="welcome-section">
+            <div class="content-cards">
+                <div class="card card-1" onclick="window.open('https://www.instagram.com/juliana.bragalm?igsh=MTk0b21xdzlzZ2R3YQ==', '_blank')"></div>
+                <div class="card card-2" onclick="window.open('https://wa.me/555191084399?text=Olá! Gostaria de saber mais informações sobre os cursos disponíveis.', '_blank')"></div>
+                <div class="card card-3" onclick="window.open('https://wa.me/555191084399?text=Olá! Tenho algumas dúvidas sobre os atendimentos oferecidos. Podem me ajudar?', '_blank')"></div>
+                <div class="card card-4" onclick="window.open('https://wa.me/555191084399?text=Olá! Gostaria de agendar uma consulta com a fisio Juliana da área dermatofuncional.', '_blank')"></div>
+            </div>
+        </div>
+        
+        <!-- Texto de copyright (sem a logo) -->
+        <div class="copyright-container">
+            <div class="copyright">
+                © Todos os direitos reservados a Juliana Braga Lima<br>
+                Desenvolvido por: <a href="https://wa.me/558491569356" target="_blank">Velton Anjos</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para verificar se o elemento está visível na tela
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Função para animar os cards quando visíveis
+        function handleScroll() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                if (isElementInViewport(card) && !card.classList.contains('visible')) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, 150 * index);
+                }
+            });
+        }
+
+        // Executa a animação quando a página carrega e no scroll
+        window.addEventListener('load', () => {
+            setTimeout(handleScroll, 300);
+        });
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
+</html>
